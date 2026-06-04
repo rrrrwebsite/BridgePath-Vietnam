@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BridgePath Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:  #1B4332;
+  --mid:     #2D6A4F;
+  --sage:    #52B788;
+  --mint:    #95D5B2;
+  --pale:    #D8F3DC;
+  --gold:    #D4A017;
+  --dkgold:  #9A7209;
+  --cream:   #F5F0E8;
+  --chalk:   #FAFAF7;
+  --ink:     #141414;
+  --gray:    #555;
+  --lgray:   #E2DDD5;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--chalk); color: var(--ink); overflow-x: hidden; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--forest); }
+::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 68px; padding: 0 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(20, 45, 30, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(82,183,136,0.15);
+  transition: all 0.3s;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-chevrons {
+  display: flex; gap: 3px; align-items: flex-end;
+}
+.nav-chevrons svg { display: block; }
+.brand-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700;
+  color: white; letter-spacing: 0.3px;
+}
+.brand-text em { color: var(--gold); font-style: normal; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--mint); }
+.nav-pill {
+  background: var(--gold) !important; color: var(--ink) !important;
+  padding: 8px 22px; border-radius: 100px;
+  font-weight: 700 !important;
+}
+.nav-pill:hover { background: var(--dkgold) !important; color: white !important; }
+
+/* ── HERO ── */
+#hero {
+  height: 100vh; min-height: 700px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-photo {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1800&q=85&fit=crop');
+  background-size: cover; background-position: center 30%;
+  transform: scale(1.06);
+  animation: heroZoom 14s ease-out forwards;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.0); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,28,18,0.35) 0%,
+    rgba(10,28,18,0.2) 30%,
+    rgba(10,28,18,0.65) 65%,
+    rgba(10,28,18,0.93) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; padding: 0 72px 80px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: end;
+}
+.hero-left {}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15);
+  border: 1px solid rgba(82,183,136,0.35);
+  border-radius: 100px;
+  padding: 6px 16px; margin-bottom: 24px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--mint);
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sage); flex-shrink: 0;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700; line-height: 1.05;
+  color: white; margin-bottom: 24px;
+}
+h1 em { color: var(--gold); font-style: italic; }
+.hero-desc {
+  font-size: 16px; font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75; max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-btns { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-gold {
+  background: var(--gold); color: var(--ink);
+  padding: 14px 36px; border-radius: 100px;
+  font-weight: 700; font-size: 13.5px;
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: all 0.25s; display: inline-block;
+}
+.btn-gold:hover { background: var(--dkgold); color: white; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,160,23,0.35); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+  padding: 14px 36px; border-radius: 100px;
+  font-weight: 500; font-size: 13.5px;
+  text-decoration: none; transition: all 0.25s; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--mint); color: var(--mint); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  align-self: end;
+}
+.hero-stat-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 16px; padding: 24px 22px;
+  transition: background 0.25s;
+}
+.hero-stat-box:hover { background: rgba(255,255,255,0.12); }
+.hsb-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 700;
+  color: white; line-height: 1;
+  margin-bottom: 4px;
+}
+.hsb-num span { color: var(--gold); }
+.hsb-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+}
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); animation: bounce 2.5s infinite;
+}
+.hero-scroll::after {
+  content: '';
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTION GENERIC ── */
+section { padding: 100px 72px; }
+.sec-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--sage);
+  margin-bottom: 16px;
+}
+.sec-eyebrow::before {
+  content: ''; width: 28px; height: 2px; background: var(--sage);
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 700; line-height: 1.12;
+  color: var(--forest); margin-bottom: 18px;
+}
+h2 em { font-style: italic; color: var(--mid); }
+.sec-lead {
+  font-size: 16px; color: var(--gray); line-height: 1.75;
+  max-width: 560px; font-weight: 300; margin-bottom: 56px;
+}
+.dark-sec h2 { color: white; }
+.dark-sec h2 em { color: var(--mint); }
+.dark-sec .sec-eyebrow { color: var(--gold); }
+.dark-sec .sec-eyebrow::before { background: var(--gold); }
+.dark-sec .sec-lead { color: rgba(255,255,255,0.6); }
+
+/* ── PROBLEM ── */
+#problem { background: white; padding-top: 0; }
+.prob-photo-strip {
+  width: 100%; height: 420px; position: relative; overflow: hidden;
+  margin-bottom: 0;
+}
+.prob-photo-strip img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+  display: block;
+}
+.prob-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, white 100%);
+}
+.prob-content { padding: 0 72px 80px; }
+.problem-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.prob-card {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--lgray);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.prob-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(27,67,50,0.12);
+}
+.prob-card-photo {
+  height: 200px; overflow: hidden;
+}
+.prob-card-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+.prob-card:hover .prob-card-photo img { transform: scale(1.06); }
+.prob-card-body { padding: 32px 28px; background: white; }
+.prob-stat-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--forest); line-height: 1;
+  margin-bottom: 4px;
+}
+.prob-stat-sub {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--sage);
+  margin-bottom: 18px;
+}
+.prob-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--forest); margin-bottom: 12px;
+}
+.prob-card-text {
+  font-size: 14px; color: var(--gray); line-height: 1.7; font-weight: 300;
+}
+.src-note {
+  margin-top: 36px; font-size: 12px;
+  color: #aaa; font-style: italic;
+  padding: 14px 20px; background: #FAFAF7;
+  border-left: 3px solid var(--pale);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── PROGRAM (photo bg) ── */
+#program {
+  position: relative; overflow: hidden;
+  padding: 0; background: var(--forest);
+}
+.prog-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center;
+  opacity: 0.08;
+}
+.prog-inner { position: relative; z-index: 1; padding: 100px 72px; }
+.program-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.prog-card {
+  background: rgba(255,255,255,0.04);
+  padding: 48px 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.prog-card:hover { background: rgba(255,255,255,0.08); }
+.prog-card-accent {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.prog-num-bg {
+  position: absolute; bottom: -16px; right: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 110px; font-weight: 700;
+  color: rgba(255,255,255,0.04); line-height: 1;
+  pointer-events: none;
+}
+.prog-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 24px;
+}
+.prog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700;
+  color: white; margin-bottom: 14px;
+}
+.prog-card-text {
+  font-size: 14.5px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; font-weight: 300; margin-bottom: 24px;
+}
+.prog-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.prog-chip {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.4px;
+  text-transform: uppercase; padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── PHOTO BREAK ── */
+.photo-break {
+  width: 100%; height: 480px; overflow: hidden;
+  position: relative;
+}
+.photo-break img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 55%;
+  transition: transform 0.8s ease;
+}
+.photo-break:hover img { transform: scale(1.03); }
+.photo-break-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(27,67,50,0.7) 0%, rgba(27,67,50,0.2) 60%, transparent 100%);
+  display: flex; align-items: center;
+  padding: 64px;
+}
+.photo-break-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 600; font-style: italic;
+  color: white; max-width: 600px;
+  line-height: 1.35;
+}
+.photo-break-quote em {
+  color: var(--gold); font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: rgba(212,160,23,0.4);
+  text-underline-offset: 4px;
+}
+
+/* ── IMPACT ── */
+#impact { background: var(--chalk); }
+.impact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.impact-photo-col {}
+.impact-main-photo {
+  width: 100%; border-radius: 20px; overflow: hidden;
+  height: 340px; margin-bottom: 16px;
+}
+.impact-main-photo img { width: 100%; height: 100%; object-fit: cover; }
+.impact-mini-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.impact-mini-photo {
+  border-radius: 14px; overflow: hidden; height: 160px;
+}
+.impact-mini-photo img { width: 100%; height: 100%; object-fit: cover; }
+.impact-right {}
+.impact-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+.impact-stat {
+  padding: 26px 22px; border-radius: 16px;
+  transition: transform 0.2s;
+}
+.impact-stat:hover { transform: translateY(-3px); }
+.impact-stat.a { background: var(--forest); }
+.impact-stat.b { background: var(--mid); }
+.impact-stat.c { background: var(--sage); }
+.impact-stat.d { background: var(--gold); }
+.is-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 700;
+  color: white; line-height: 1; margin-bottom: 4px;
+}
+.impact-stat.d .is-num { color: var(--ink); }
+.is-lbl {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+}
+.impact-stat.d .is-lbl { color: rgba(0,0,0,0.5); }
+.outcomes-list { list-style: none; }
+.outcome-li {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--lgray);
+  font-size: 14.5px; color: var(--gray); line-height: 1.6;
+}
+.outcome-li:last-child { border: none; }
+.outcome-li strong { color: var(--ink); font-weight: 600; }
+.outcome-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 6px;
+}
+
+/* ── PARTNERS (photo bg) ── */
+#partners {
+  position: relative; overflow: hidden;
+  background: var(--ink);
+}
+.partners-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center 60%;
+  opacity: 0.15;
+}
+.partners-inner { position: relative; z-index: 1; }
+.partners-grid-cards {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.partner-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px; padding: 36px 30px;
+  transition: background 0.3s, transform 0.3s;
+}
+.partner-card:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-4px);
+}
+.pc-top-bar {
+  height: 3px; border-radius: 2px;
+  margin-bottom: 24px;
+}
+.partner-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 700;
+  color: white; margin-bottom: 12px;
+}
+.partner-text {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; font-weight: 300; margin-bottom: 20px;
+}
+.partner-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.partner-chip {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── TIMELINE ── */
+#timeline {
+  position: relative; overflow: hidden;
+}
+.tl-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center;
+  opacity: 0.06;
+}
+#timeline { background: var(--forest); }
+.tl-inner { position: relative; z-index: 1; }
+.timeline-cols {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.tl-col {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s;
+}
+.tl-col:hover { transform: translateY(-5px); }
+.tl-col-head {
+  padding: 32px 28px 24px;
+  position: relative; overflow: hidden;
+}
+.tl-yr-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 4px;
+}
+.tl-months { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+.tl-phase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 700;
+  color: white; line-height: 1.1;
+}
+.tl-col-body { background: rgba(0,0,0,0.18); padding: 28px; }
+.tl-ms { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.tl-ms li {
+  display: flex; gap: 12px;
+  font-size: 13.5px; color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+.tl-ms li::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  flex-shrink: 0; margin-top: 7px;
+}
+.tl-big-num {
+  position: absolute; bottom: -12px; right: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px; font-weight: 700;
+  color: rgba(255,255,255,0.06); line-height: 1;
+  pointer-events: none;
+}
+
+/* ── BUDGET ── */
+#budget { background: var(--chalk); }
+.budget-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.budget-photo { border-radius: 20px; overflow: hidden; height: 320px; margin-bottom: 20px; }
+.budget-photo img { width: 100%; height: 100%; object-fit: cover; }
+.budget-total-block {
+  background: var(--forest); border-radius: 18px;
+  padding: 36px 32px;
+}
+.btb-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.btb-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 16px;
+}
+.btb-note {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.65; font-weight: 300;
+}
+.budget-bars { display: flex; flex-direction: column; gap: 6px; }
+.bar-row {
+  background: white; border: 1px solid var(--lgray);
+  border-radius: 14px; padding: 18px 22px;
+  display: flex; align-items: center; gap: 16px;
+  transition: box-shadow 0.2s;
+}
+.bar-row:hover { box-shadow: 0 8px 28px rgba(27,67,50,0.1); }
+.bar-swatch {
+  width: 12px; height: 36px; border-radius: 4px; flex-shrink: 0;
+}
+.bar-info { flex: 1; }
+.bar-name {
+  font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px;
+}
+.bar-amount { font-size: 12px; color: #aaa; }
+.bar-track {
+  height: 4px; background: #F0EDE8;
+  border-radius: 2px; margin-top: 8px; overflow: hidden;
+}
+.bar-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+.bar-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700;
+}
+
+/* ── CTA ── */
+#cta {
+  position: relative; overflow: hidden;
+  height: 560px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cta-photo {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1800&q=85&fit=crop');
+  background-size: cover; background-position: center 40%;
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,28,18,0.88) 0%, rgba(10,28,18,0.72) 100%);
+}
+.cta-inner {
+  position: relative; z-index: 1;
+  text-align: center; padding: 0 72px; max-width: 900px;
+}
+.cta-inner .sec-eyebrow { justify-content: center; color: var(--gold); }
+.cta-inner .sec-eyebrow::before { background: var(--gold); }
+.cta-inner h2 { color: white; margin-bottom: 20px; }
+.cta-inner h2 em { color: var(--gold); }
+.cta-inner p {
+  font-size: 17px; color: rgba(255,255,255,0.7);
+  line-height: 1.7; font-weight: 300;
+  margin-bottom: 40px;
+}
+.cta-partners {
+  display: flex; justify-content: center; align-items: center;
+  gap: 12px; flex-wrap: wrap; margin-top: 28px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+}
+.cta-chip {
+  padding: 6px 16px; border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); padding: 36px 72px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700; color: white;
+}
+.footer-brand em { color: var(--gold); font-style: normal; }
+.footer-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.au { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+.au.d1 { animation-delay: 0.1s; }
+.au.d2 { animation-delay: 0.3s; }
+.au.d3 { animation-delay: 0.5s; }
+.au.d4 { animation-delay: 0.7s; }
+.au.d5 { animation-delay: 0.9s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  section { padding: 64px 24px; }
+  #hero .hero-content { grid-template-columns: 1fr; padding: 0 24px 64px; }
+  .hero-stats { grid-template-columns: repeat(4, 1fr); }
+  .problem-cards, .program-grid, .impact-layout,
+  .partners-grid-cards, .timeline-cols, .budget-layout { grid-template-columns: 1fr; }
+  .prob-content { padding: 0 24px 64px; }
+  footer { flex-direction: column; gap: 10px; text-align: center; }
+  .photo-break-overlay { padding: 32px; }
+  .photo-break-quote { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#hero">
+    <div class="nav-chevrons">
+      <svg width="22" height="22" viewBox="0 0 22 22">
+        <polyline points="2,18 8,8 14,18" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="6,18 12,8 18,18" fill="none" stroke="#95D5B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="10,18 16,8 22,18" fill="none" stroke="#52B788" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="2" y1="19.5" x2="22" y2="19.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-text">Bridge<em>Path</em> Vietnam</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#budget">Budget</a></li>
+    <li><a href="#cta" class="nav-pill">Get Involved</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag au d1">Đắk Nông Province · 2025–2028</div>
+      <h1 class="au d2">Rural Learning<br>Hubs for <em>Digital</em><br>& Literacy Equity</h1>
+      <p class="hero-desc au d3">BridgePath Vietnam builds renovated learning spaces, digital access, structured tutoring, and bicycle transport programs inside rural schools — reaching children who have been left behind.</p>
+      <div class="hero-btns au d4">
+        <a href="#program" class="btn-gold">See What We Do</a>
+        <a href="#impact" class="btn-outline">View Impact →</a>
+      </div>
+    </div>
+    <div class="hero-stats au d3">
+      <div class="hero-stat-box">
+        <div class="hsb-num">$1<span>.3M</span></div>
+        <div class="hsb-label">Total Budget</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">1,000<span>+</span></div>
+        <div class="hsb-label">Children Served</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">800</div>
+        <div class="hsb-label">Bicycles Distributed</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">4</div>
+        <div class="hsb-label">Learning Hubs</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="prob-photo-strip">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85&fit=crop&crop=center" alt="Rural Vietnam mountain landscape" loading="lazy">
+    <div class="prob-photo-overlay"></div>
+  </div>
+  <div class="prob-content">
+    <div class="sec-eyebrow">The Problem</div>
+    <h2>Three barriers blocking<br>rural education in <em>Vietnam</em></h2>
+    <p class="sec-lead">Despite Vietnam's national progress, students in remote mountainous provinces face structural disadvantages that national statistics hide.</p>
+    <div class="problem-cards">
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&fit=crop&crop=center" alt="Mountain roads Vietnam" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">5–15<small style="font-size:28px">km</small></div>
+          <div class="prob-stat-sub">Daily walk for some students</div>
+          <div class="prob-card-title">Geographic Barriers</div>
+          <p class="prob-card-text">Children in Đắk Nông & Lào Cai travel mountain roads daily — especially dangerous in the rainy season. Transport difficulty is a top-3 reason for dropout among rural students.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&fit=crop&crop=center" alt="Empty classroom books" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">60<small style="font-size:28px">%+</small></div>
+          <div class="prob-stat-sub">Mountain CLCs lack books & power</div>
+          <div class="prob-card-title">Resource Deficits</div>
+          <p class="prob-card-text">Vietnam's Community Learning Centres are mandated by law, but over 60% in mountainous provinces lack materials, electricity, or active management. They exist on paper — not in practice.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&fit=crop&crop=center" alt="Digital divide technology" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">1 in 3</div>
+          <div class="prob-stat-sub">Rural schools lack stable internet</div>
+          <div class="prob-card-title">Digital Divide</div>
+          <p class="prob-card-text">Vietnam's digital education push has accelerated access in cities. Rural Central Highlands and Northern Uplands remain severely underserved — students are cut off from online learning entirely.</p>
+        </div>
+      </div>
+    </div>
+    <div class="src-note">Sources: UNICEF Vietnam (2021), MOET CLC Review (2020), GSMA Mobile Connectivity Index (2023)</div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK 1 -->
+<div class="photo-break">
+  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=85&fit=crop&crop=center" alt="Children learning" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-quote">
+      "For many of these students, a learning hub will be their <em>first</em> experience with a computer, strong internet, and a trained adult helping them use it."
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="prog-photo-bg"></div>
+  <div class="prog-inner dark-sec">
+    <div class="sec-eyebrow">What We Do</div>
+    <h2>Four components.<br>One <em>integrated</em> solution.</h2>
+    <p class="sec-lead">We upgrade existing school buildings — connecting physical infrastructure, digital access, structured learning, and transport into one program at four schools in Đắk Nông Province.</p>
+    <div class="program-grid">
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--sage)"></div>
+        <div class="prog-num-bg">01</div>
+        <div class="prog-icon" style="background:rgba(82,183,136,0.15)">🏫</div>
+        <div class="prog-card-title">Renovated Learning Hubs</div>
+        <p class="prog-card-text">We upgrade existing rooms inside four schools into fully equipped library-digital centers — open during school hours and after school for community use.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">4 Schools</span>
+          <span class="prog-chip">25–30 Computers Each</span>
+          <span class="prog-chip">Books & Shelving</span>
+          <span class="prog-chip">After-School Access</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--gold)"></div>
+        <div class="prog-num-bg">02</div>
+        <div class="prog-icon" style="background:rgba(212,160,23,0.15)">📶</div>
+        <div class="prog-card-title">Digital Access & Pocket Wi-Fi</div>
+        <p class="prog-card-text">Every hub gets fixed broadband or 4G LTE internet with offline backup. Pocket Wi-Fi units distributed directly to students. Tech tutorials provided for first-time users.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">Fixed + 4G/LTE</span>
+          <span class="prog-chip">Offline Backup</span>
+          <span class="prog-chip">Pocket Wi-Fi</span>
+          <span class="prog-chip">Tech Tutorials</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--mint)"></div>
+        <div class="prog-num-bg">03</div>
+        <div class="prog-icon" style="background:rgba(149,213,178,0.15)">📖</div>
+        <div class="prog-card-title">Literacy & Online Tutoring</div>
+        <p class="prog-card-text">Room to Read runs structured reading programs at each hub. Students access live and recorded tutoring in Vietnamese, Math, and English — available 24/7 around family schedules.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">Room to Read</span>
+          <span class="prog-chip">Live & Async</span>
+          <span class="prog-chip">24/7 Access</span>
+          <span class="prog-chip">3 Subjects</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--sage)"></div>
+        <div class="prog-num-bg">04</div>
+        <div class="prog-icon" style="background:rgba(82,183,136,0.15)">🚲</div>
+        <div class="prog-card-title">Bicycle Program</div>
+        <p class="prog-card-text">800 bikes, helmets, and locks distributed across all four schools over three years. A community mechanic network handles ongoing maintenance — keeping students moving and in school.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">800 Bicycles</span>
+          <span class="prog-chip">Helmets & Locks</span>
+          <span class="prog-chip">Community Mechanics</span>
+          <span class="prog-chip">~$250 Per Student</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="sec-eyebrow">Impact</div>
+  <h2>What $1.3M actually <em>delivers</em></h2>
+  <p class="sec-lead">Concrete outcomes over three years — and a model that continues after BridgePath moves to Phase 2.</p>
+  <div class="impact-layout">
+    <div class="impact-photo-col">
+      <div class="impact-main-photo">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&fit=crop&crop=center" alt="Students learning with computers" loading="lazy">
+      </div>
+      <div class="impact-mini-photos">
+        <div class="impact-mini-photo">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&q=80&fit=crop&crop=center" alt="Children bicycle" loading="lazy">
+        </div>
+        <div class="impact-mini-photo">
+          <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=400&q=80&fit=crop&crop=center" alt="Students in classroom" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="impact-right">
+      <div class="impact-stats-grid">
+        <div class="impact-stat a"><div class="is-num">4</div><div class="is-lbl">Learning Hubs</div></div>
+        <div class="impact-stat b"><div class="is-num">1,000+</div><div class="is-lbl">Children Served</div></div>
+        <div class="impact-stat c"><div class="is-num">600+</div><div class="is-lbl">Digital Learners</div></div>
+        <div class="impact-stat d"><div class="is-num">800</div><div class="is-lbl">Bicycles</div></div>
+      </div>
+      <ul class="outcomes-list">
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--forest)"></div><div><strong>4 hubs</strong> fully operational inside schools by end of Year 3</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--mid)"></div><div><strong>800 bicycles</strong> in students' hands — measurable improvement in attendance rates</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--sage)"></div><div><strong>24/7 tutoring</strong> access in Math, Vietnamese & English for all enrolled students</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--gold)"></div><div><strong>Sunflower Mission</strong> takes over hub maintenance after Year 3 — infrastructure continues independently</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--forest)"></div><div><strong>Room to Read</strong> continues literacy programs at all four schools after BridgePath moves to Phase 2</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--mid)"></div><div><strong>Replication manual</strong> published Year 3 — ready for Lào Cai and every province that follows</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK 2 -->
+<div class="photo-break">
+  <img src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1800&q=85&fit=crop&crop=center" alt="Vietnam landscape infrastructure" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-quote">
+      "We build it, hand it off to partners built to <em>sustain</em> it, then move to the next province."
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-photo-bg"></div>
+  <div class="partners-inner dark-sec">
+    <div class="sec-eyebrow">Partnerships</div>
+    <h2>BridgePath leads.<br>Specialists <em>deliver</em>.</h2>
+    <p class="sec-lead">Four expert partners — each contributing what decades of experience only they can bring. One contract. One point of accountability.</p>
+    <div class="partners-grid-cards">
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--sage)"></div>
+        <div class="partner-name">Sunflower Mission</div>
+        <p class="partner-text">Decades of school renovation experience in rural Vietnam. Deep community trust. Works alongside us during the program, then takes over as long-term caretaker of all four school hubs after Year 3.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Infrastructure</span>
+          <span class="partner-chip">Renovation</span>
+          <span class="partner-chip">Long-Term Steward</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--gold)"></div>
+        <div class="partner-name">Room to Read</div>
+        <p class="partner-text">The leading school library and literacy organization across Asia — their model is adopted nationally by Vietnam's Ministry of Education. Trains facilitators, runs reading programs, continues independently after Year 3.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Literacy</span>
+          <span class="partner-chip">Library Design</span>
+          <span class="partner-chip">Facilitator Training</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--mint)"></div>
+        <div class="partner-name">Vietnam DOET</div>
+        <p class="partner-text">Vietnam's Department of Education and Training. Selects the four schools, provides official approvals, connects hubs to national education frameworks, and shares attendance data for monitoring.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Government Partner</span>
+          <span class="partner-chip">Site Selection</span>
+          <span class="partner-chip">Policy Integration</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--sage)"></div>
+        <div class="partner-name">Online Tutoring Partners</div>
+        <p class="partner-text">Contracted edtech providers delivering 24/7 curriculum-aligned tutoring in Vietnamese, Math, and English — live sessions and recorded lessons accessible from every hub device.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">24/7 Content</span>
+          <span class="partner-chip">3 Subjects</span>
+          <span class="partner-chip">Live + Async</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="tl-photo-bg"></div>
+  <div class="tl-inner dark-sec">
+    <div class="sec-eyebrow">Timeline</div>
+    <h2>Three years.<br>Three <em>deliberate</em> phases.</h2>
+    <p class="sec-lead">Build first. Operate at full capacity. Hand over and scale. Every milestone is sequenced intentionally.</p>
+    <div class="timeline-cols">
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#1B4332,#2D6A4F)">
+          <div class="tl-yr-label">Year 1</div>
+          <div class="tl-months">Months 1–12</div>
+          <div class="tl-phase">Foundation</div>
+          <div class="tl-big-num">1</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>Hire core team & field coordinators</li>
+            <li>Needs assessment at all four schools</li>
+            <li>Begin renovations on first two hubs</li>
+            <li>Distribute first 200 bicycles</li>
+            <li>Sign all partner agreements</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#2D6A4F,#52B788)">
+          <div class="tl-yr-label">Year 2</div>
+          <div class="tl-months">Months 13–24</div>
+          <div class="tl-phase">Full Operation</div>
+          <div class="tl-big-num">2</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>All 4 hubs completed with 25–30 computers</li>
+            <li>Literacy programs & tutoring live everywhere</li>
+            <li>300 more bicycles distributed (500 total)</li>
+            <li>Midline review at Month 18</li>
+            <li>Replication documentation begins</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#52B788,#95D5B2)">
+          <div class="tl-yr-label">Year 3</div>
+          <div class="tl-months">Months 25–36</div>
+          <div class="tl-phase">Handover & Scale</div>
+          <div class="tl-big-num">3</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>Final 300 bicycles distributed (800 total)</li>
+            <li>External evaluation & endline assessment</li>
+            <li>Replication manual published</li>
+            <li>Hubs handed to Sunflower & schools</li>
+            <li>Lào Cai Phase 2 planning begins</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <div class="sec-eyebrow">Budget</div>
+  <h2>USD 1,300,000<br>over <em>three years</em></h2>
+  <p class="sec-lead">Allocated intentionally — prioritizing people first, then the infrastructure they need to succeed.</p>
+  <div class="budget-layout">
+    <div>
+      <div class="budget-photo">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=80&fit=crop&crop=center" alt="Education investment" loading="lazy">
+      </div>
+      <div class="budget-total-block">
+        <div class="btb-label">Total 3-Year Budget</div>
+        <div class="btb-amount">$1,300,000</div>
+        <div class="btb-note">The largest share goes to staff and training — because a renovated room with computers doesn't educate anyone. The people running these hubs every day make the difference.</div>
+      </div>
+    </div>
+    <div class="budget-bars">
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--forest)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Staff & Training</div>
+          <div class="bar-amount">$380,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:31.7%;background:var(--forest)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--forest)">31.7%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--mid)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Renovation & Hubs</div>
+          <div class="bar-amount">$330,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:27.5%;background:var(--mid)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--mid)">27.5%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--sage)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Digital & Devices</div>
+          <div class="bar-amount">$270,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:20.8%;background:var(--sage)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--sage)">20.8%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--gold)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Bicycles & Transport</div>
+          <div class="bar-amount">$200,000 · ~$250 per student</div>
+          <div class="bar-track"><div class="bar-fill" style="width:15.4%;background:var(--gold)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--dkgold)">15.4%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:#bbb"></div>
+        <div class="bar-info">
+          <div class="bar-name">M&E & Admin</div>
+          <div class="bar-amount">$120,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:9.2%;background:#bbb"></div></div>
+        </div>
+        <div class="bar-pct" style="color:#bbb">9.2%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-photo"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <div class="sec-eyebrow" style="justify-content:center">Get Involved</div>
+    <h2 style="color:white">Ready to bring quality education<br>to rural <em>Vietnam</em>?</h2>
+    <p>BridgePath Vietnam is seeking implementation partners, co-funders, and organizations interested in replicating this model. Four schools. Four communities. 800 bicycles. 1,000 children.</p>
+    <a href="mailto:hello@bridgepathvietnam.org" class="btn-gold" style="font-size:15px;padding:16px 44px">Contact BridgePath Vietnam</a>
+    <div class="cta-partners">
+      <span>In partnership with</span>
+      <span class="cta-chip">Sunflower Mission</span>
+      <span class="cta-chip">Room to Read</span>
+      <span class="cta-chip">Vietnam DOET</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Bridge<em>Path</em> Vietnam</div>
+  <div class="footer-note">Rural Learning Hubs for Digital & Literacy Equity · Đắk Nông Province · 2025–2028</div>
+  <div class="footer-note">© 2026 BridgePath Vietnam</div>
+</footer>
+
+</body>
+</html>

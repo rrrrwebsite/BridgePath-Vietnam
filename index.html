@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BridgePath Vietnam brings renovated learning hubs, digital access, structured tutoring, and bicycle programs to rural Vietnamese children in Đắk Nông Province. A three-year, $1.3M initiative.">
+<meta property="og:title" content="BridgePath Vietnam — Rural Learning Hubs">
+<meta property="og:description" content="Bridging the gap between donor intent and classroom-level impact in rural Vietnam. Four schools. 800 bicycles. 1,000+ children.">
+<meta property="og:type" content="website">
+<title>BridgePath Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:  #1B4332;
+  --mid:     #2D6A4F;
+  --sage:    #52B788;
+  --mint:    #95D5B2;
+  --pale:    #D8F3DC;
+  --gold:    #D4A017;
+  --dkgold:  #9A7209;
+  --cream:   #F5F0E8;
+  --chalk:   #FAFAF7;
+  --ink:     #141414;
+  --gray:    #555;
+  --lgray:   #E2DDD5;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--chalk); color: var(--ink); overflow-x: hidden; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--forest); }
+::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 3px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 68px; padding: 0 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(20, 45, 30, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(82,183,136,0.15);
+  transition: all 0.3s;
+}
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+}
+.nav-chevrons {
+  display: flex; gap: 3px; align-items: flex-end;
+}
+.nav-chevrons svg { display: block; }
+.brand-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700;
+  color: white; letter-spacing: 0.3px;
+}
+.brand-text em { color: var(--gold); font-style: normal; }
+.nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+.nav-links a {
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--mint); }
+.nav-pill {
+  background: var(--gold) !important; color: var(--ink) !important;
+  padding: 8px 22px; border-radius: 100px;
+  font-weight: 700 !important;
+}
+.nav-pill:hover { background: var(--dkgold) !important; color: white !important; }
+
+/* ── HERO ── */
+#hero {
+  height: 100vh; min-height: 700px;
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.hero-photo {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=2400&q=95&fit=crop&crop=center');
+  background-size: cover; background-position: center 40%;
+  transform: scale(1.06);
+  animation: heroZoom 14s ease-out forwards;
+}
+@keyframes heroZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1.0); }
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,28,18,0.35) 0%,
+    rgba(10,28,18,0.2) 30%,
+    rgba(10,28,18,0.65) 65%,
+    rgba(10,28,18,0.93) 100%
+  );
+}
+.hero-content {
+  position: relative; z-index: 2;
+  width: 100%; padding: 0 72px 80px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: end;
+}
+.hero-left {}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(82,183,136,0.15);
+  border: 1px solid rgba(82,183,136,0.35);
+  border-radius: 100px;
+  padding: 6px 16px; margin-bottom: 24px;
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--mint);
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--sage); flex-shrink: 0;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700; line-height: 1.05;
+  color: white; margin-bottom: 24px;
+}
+h1 em { color: var(--gold); font-style: italic; }
+.hero-desc {
+  font-size: 16px; font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75; max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-btns { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-gold {
+  background: var(--gold); color: var(--ink);
+  padding: 14px 36px; border-radius: 100px;
+  font-weight: 700; font-size: 13.5px;
+  text-decoration: none; letter-spacing: 0.3px;
+  transition: all 0.25s; display: inline-block;
+}
+.btn-gold:hover { background: var(--dkgold); color: white; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,160,23,0.35); }
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+  padding: 14px 36px; border-radius: 100px;
+  font-weight: 500; font-size: 13.5px;
+  text-decoration: none; transition: all 0.25s; display: inline-block;
+}
+.btn-outline:hover { border-color: var(--mint); color: var(--mint); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  align-self: end;
+}
+.hero-stat-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border-radius: 16px; padding: 24px 22px;
+  transition: background 0.25s;
+}
+.hero-stat-box:hover { background: rgba(255,255,255,0.12); }
+.hsb-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 700;
+  color: white; line-height: 1;
+  margin-bottom: 4px;
+}
+.hsb-num span { color: var(--gold); }
+.hsb-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+}
+.hero-scroll {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+  z-index: 2; display: flex; flex-direction: column;
+  align-items: center; gap: 8px;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); animation: bounce 2.5s infinite;
+}
+.hero-scroll::after {
+  content: '';
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ── SECTION GENERIC ── */
+section { padding: 100px 72px; }
+.sec-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--sage);
+  margin-bottom: 16px;
+}
+.sec-eyebrow::before {
+  content: ''; width: 28px; height: 2px; background: var(--sage);
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 700; line-height: 1.12;
+  color: var(--forest); margin-bottom: 18px;
+}
+h2 em { font-style: italic; color: var(--mid); }
+.sec-lead {
+  font-size: 16px; color: var(--gray); line-height: 1.75;
+  max-width: 560px; font-weight: 300; margin-bottom: 56px;
+}
+.dark-sec h2 { color: white; }
+.dark-sec h2 em { color: var(--mint); }
+.dark-sec .sec-eyebrow { color: var(--gold); }
+.dark-sec .sec-eyebrow::before { background: var(--gold); }
+.dark-sec .sec-lead { color: rgba(255,255,255,0.6); }
+
+/* ── PROBLEM ── */
+#problem { background: white; padding-top: 0; }
+.prob-photo-strip {
+  width: 100%; height: 420px; position: relative; overflow: hidden;
+  margin-bottom: 0;
+}
+.prob-photo-strip img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 40%;
+  display: block;
+}
+.prob-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, white 100%);
+}
+.prob-content { padding: 0 72px 80px; }
+.problem-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.prob-card {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--lgray);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.prob-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(27,67,50,0.12);
+}
+.prob-card-photo {
+  height: 200px; overflow: hidden;
+}
+.prob-card-photo img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.5s;
+}
+.prob-card:hover .prob-card-photo img { transform: scale(1.06); }
+.prob-card-body { padding: 32px 28px; background: white; }
+.prob-stat-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--forest); line-height: 1;
+  margin-bottom: 4px;
+}
+.prob-stat-sub {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: var(--sage);
+  margin-bottom: 18px;
+}
+.prob-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--forest); margin-bottom: 12px;
+}
+.prob-card-text {
+  font-size: 14px; color: var(--gray); line-height: 1.7; font-weight: 300;
+}
+.src-note {
+  margin-top: 36px; font-size: 12px;
+  color: #aaa; font-style: italic;
+  padding: 14px 20px; background: #FAFAF7;
+  border-left: 3px solid var(--pale);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── PROGRAM (photo bg) ── */
+#program {
+  position: relative; overflow: hidden;
+  padding: 0; background: var(--forest);
+}
+.prog-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center;
+  opacity: 0.08;
+}
+.prog-inner { position: relative; z-index: 1; padding: 100px 72px; }
+.program-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.prog-card {
+  background: rgba(255,255,255,0.04);
+  padding: 48px 40px;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.prog-card:hover { background: rgba(255,255,255,0.08); }
+.prog-card-accent {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.prog-num-bg {
+  position: absolute; bottom: -16px; right: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 110px; font-weight: 700;
+  color: rgba(255,255,255,0.04); line-height: 1;
+  pointer-events: none;
+}
+.prog-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; margin-bottom: 24px;
+}
+.prog-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700;
+  color: white; margin-bottom: 14px;
+}
+.prog-card-text {
+  font-size: 14.5px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; font-weight: 300; margin-bottom: 24px;
+}
+.prog-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.prog-chip {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.4px;
+  text-transform: uppercase; padding: 5px 14px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── PHOTO BREAK ── */
+.photo-break {
+  width: 100%; height: 480px; overflow: hidden;
+  position: relative;
+}
+.photo-break img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 55%;
+  transition: transform 0.8s ease;
+}
+.photo-break:hover img { transform: scale(1.03); }
+.photo-break-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(27,67,50,0.7) 0%, rgba(27,67,50,0.2) 60%, transparent 100%);
+  display: flex; align-items: center;
+  padding: 64px;
+}
+.photo-break-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 600; font-style: italic;
+  color: white; max-width: 600px;
+  line-height: 1.35;
+}
+.photo-break-quote em {
+  color: var(--gold); font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: rgba(212,160,23,0.4);
+  text-underline-offset: 4px;
+}
+
+/* ── IMPACT ── */
+#impact { background: var(--chalk); }
+.impact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: start; }
+.impact-photo-col {}
+.impact-main-photo {
+  width: 100%; border-radius: 20px; overflow: hidden;
+  height: 340px; margin-bottom: 16px;
+}
+.impact-main-photo img { width: 100%; height: 100%; object-fit: cover; }
+.impact-mini-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.impact-mini-photo {
+  border-radius: 14px; overflow: hidden; height: 160px;
+}
+.impact-mini-photo img { width: 100%; height: 100%; object-fit: cover; }
+.impact-right {}
+.impact-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
+.impact-stat {
+  padding: 26px 22px; border-radius: 16px;
+  transition: transform 0.2s;
+}
+.impact-stat:hover { transform: translateY(-3px); }
+.impact-stat.a { background: var(--forest); }
+.impact-stat.b { background: var(--mid); }
+.impact-stat.c { background: var(--sage); }
+.impact-stat.d { background: var(--gold); }
+.is-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 700;
+  color: white; line-height: 1; margin-bottom: 4px;
+}
+.impact-stat.d .is-num { color: var(--ink); }
+.is-lbl {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  text-transform: uppercase; color: rgba(255,255,255,0.6);
+}
+.impact-stat.d .is-lbl { color: rgba(0,0,0,0.5); }
+.outcomes-list { list-style: none; }
+.outcome-li {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--lgray);
+  font-size: 14.5px; color: var(--gray); line-height: 1.6;
+}
+.outcome-li:last-child { border: none; }
+.outcome-li strong { color: var(--ink); font-weight: 600; }
+.outcome-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 6px;
+}
+
+/* ── PARTNERS (photo bg) ── */
+#partners {
+  position: relative; overflow: hidden;
+  background: var(--ink);
+}
+.partners-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center 60%;
+  opacity: 0.15;
+}
+.partners-inner { position: relative; z-index: 1; }
+.partners-grid-cards {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.partner-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px; padding: 36px 30px;
+  transition: background 0.3s, transform 0.3s;
+}
+.partner-card:hover {
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-4px);
+}
+.pc-top-bar {
+  height: 3px; border-radius: 2px;
+  margin-bottom: 24px;
+}
+.partner-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 700;
+  color: white; margin-bottom: 12px;
+}
+.partner-text {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; font-weight: 300; margin-bottom: 20px;
+}
+.partner-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.partner-chip {
+  font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  padding: 5px 13px; border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── TIMELINE ── */
+#timeline {
+  position: relative; overflow: hidden;
+}
+.tl-photo-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1800&q=80&fit=crop');
+  background-size: cover; background-position: center;
+  opacity: 0.06;
+}
+#timeline { background: var(--forest); }
+.tl-inner { position: relative; z-index: 1; }
+.timeline-cols {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.tl-col {
+  border-radius: 20px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s;
+}
+.tl-col:hover { transform: translateY(-5px); }
+.tl-col-head {
+  padding: 32px 28px 24px;
+  position: relative; overflow: hidden;
+}
+.tl-yr-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 4px;
+}
+.tl-months { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+.tl-phase {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 700;
+  color: white; line-height: 1.1;
+}
+.tl-col-body { background: rgba(0,0,0,0.18); padding: 28px; }
+.tl-ms { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.tl-ms li {
+  display: flex; gap: 12px;
+  font-size: 13.5px; color: rgba(255,255,255,0.75);
+  line-height: 1.5;
+}
+.tl-ms li::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  flex-shrink: 0; margin-top: 7px;
+}
+.tl-big-num {
+  position: absolute; bottom: -12px; right: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 100px; font-weight: 700;
+  color: rgba(255,255,255,0.06); line-height: 1;
+  pointer-events: none;
+}
+
+/* ── BUDGET ── */
+#budget { background: var(--chalk); }
+.budget-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.budget-photo { border-radius: 20px; overflow: hidden; height: 320px; margin-bottom: 20px; }
+.budget-photo img { width: 100%; height: 100%; object-fit: cover; }
+.budget-total-block {
+  background: var(--forest); border-radius: 18px;
+  padding: 36px 32px;
+}
+.btb-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.btb-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 16px;
+}
+.btb-note {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.65; font-weight: 300;
+}
+.budget-bars { display: flex; flex-direction: column; gap: 6px; }
+.bar-row {
+  background: white; border: 1px solid var(--lgray);
+  border-radius: 14px; padding: 18px 22px;
+  display: flex; align-items: center; gap: 16px;
+  transition: box-shadow 0.2s;
+}
+.bar-row:hover { box-shadow: 0 8px 28px rgba(27,67,50,0.1); }
+.bar-swatch {
+  width: 12px; height: 36px; border-radius: 4px; flex-shrink: 0;
+}
+.bar-info { flex: 1; }
+.bar-name {
+  font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 2px;
+}
+.bar-amount { font-size: 12px; color: #aaa; }
+.bar-track {
+  height: 4px; background: #F0EDE8;
+  border-radius: 2px; margin-top: 8px; overflow: hidden;
+}
+.bar-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+.bar-pct {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 700;
+}
+
+/* ── CTA ── */
+#cta {
+  position: relative; overflow: hidden;
+  height: 560px;
+  display: flex; align-items: center; justify-content: center;
+}
+.cta-photo {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=1800&q=85&fit=crop');
+  background-size: cover; background-position: center 40%;
+}
+.cta-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,28,18,0.88) 0%, rgba(10,28,18,0.72) 100%);
+}
+.cta-inner {
+  position: relative; z-index: 1;
+  text-align: center; padding: 0 72px; max-width: 900px;
+}
+.cta-inner .sec-eyebrow { justify-content: center; color: var(--gold); }
+.cta-inner .sec-eyebrow::before { background: var(--gold); }
+.cta-inner h2 { color: white; margin-bottom: 20px; }
+.cta-inner h2 em { color: var(--gold); }
+.cta-inner p {
+  font-size: 17px; color: rgba(255,255,255,0.7);
+  line-height: 1.7; font-weight: 300;
+  margin-bottom: 40px;
+}
+.cta-partners {
+  display: flex; justify-content: center; align-items: center;
+  gap: 12px; flex-wrap: wrap; margin-top: 28px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+}
+.cta-chip {
+  padding: 6px 16px; border-radius: 100px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); padding: 36px 72px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 700; color: white;
+}
+.footer-brand em { color: var(--gold); font-style: normal; }
+.footer-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.au { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+.au.d1 { animation-delay: 0.1s; }
+.au.d2 { animation-delay: 0.3s; }
+.au.d3 { animation-delay: 0.5s; }
+.au.d4 { animation-delay: 0.7s; }
+.au.d5 { animation-delay: 0.9s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  section { padding: 64px 24px; }
+  #hero .hero-content { grid-template-columns: 1fr; padding: 0 24px 64px; }
+  .hero-stats { grid-template-columns: repeat(4, 1fr); }
+  .problem-cards, .program-grid, .impact-layout,
+  .partners-grid-cards, .timeline-cols, .budget-layout { grid-template-columns: 1fr; }
+  .prob-content { padding: 0 24px 64px; }
+  footer { flex-direction: column; gap: 10px; text-align: center; }
+  .photo-break-overlay { padding: 32px; }
+  .photo-break-quote { font-size: 24px; }
+}
+
+
+/* ── CONTINUOUS JOURNEY ANIMATION ── */
+#journey {
+  position: relative;
+  background: #050E08;
+  overflow: hidden;
+}
+.journey-header {
+  text-align: center;
+  padding: 100px 72px 48px;
+  position: relative; z-index: 2;
+}
+.journey-header .sec-eyebrow { justify-content: center; color: var(--gold); }
+.journey-header .sec-eyebrow::before { background: var(--gold); }
+.journey-header h2 { color: white; margin: 0 auto 16px; }
+.journey-header h2 em { color: var(--gold); }
+.journey-header p {
+  font-size: 16px; color: rgba(255,255,255,0.55);
+  max-width: 560px; margin: 0 auto 0;
+  line-height: 1.75; font-weight: 300;
+}
+
+/* Canvas stage */
+#journeyStage {
+  position: relative;
+  width: 100%; height: 640px;
+  overflow: hidden;
+}
+#journeyBgCanvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+}
+
+/* Progress bar */
+#journeyProgressBar {
+  position: absolute; bottom: 0; left: 0;
+  height: 3px; background: var(--gold);
+  width: 0%; transition: width 0.4s ease;
+  z-index: 10;
+  box-shadow: 0 0 12px rgba(212,160,23,0.6);
+}
+
+/* Step label overlay */
+#journeyOverlay {
+  position: absolute; inset: 0;
+  z-index: 5; pointer-events: none;
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 80px 72px;
+}
+.jo-step-tag {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+  opacity: 0; transform: translateX(-16px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+.jo-step-tag.show { opacity: 1; transform: translateX(0); }
+.jo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 700; color: white;
+  line-height: 1.08; margin-bottom: 14px;
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s;
+}
+.jo-title em { color: var(--gold); font-style: italic; }
+.jo-title.show { opacity: 1; transform: translateY(0); }
+.jo-desc {
+  font-size: 15px; color: rgba(255,255,255,0.65);
+  line-height: 1.7; font-weight: 300;
+  max-width: 540px;
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+}
+.jo-desc.show { opacity: 1; transform: translateY(0); }
+.jo-fact-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(212,160,23,0.1);
+  border: 1px solid rgba(212,160,23,0.3);
+  border-radius: 100px; padding: 8px 20px;
+  font-size: 12px; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.3px;
+  margin-top: 20px;
+  opacity: 0; transform: translateX(-16px);
+  transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+  width: fit-content;
+}
+.jo-fact-tag.show { opacity: 1; transform: translateX(0); }
+.jo-fact-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--gold); flex-shrink: 0;
+}
+
+/* Right side step counter */
+#journeyCounter {
+  position: absolute; right: 80px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 6; text-align: right;
+}
+.jc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 88px; font-weight: 700;
+  color: rgba(255,255,255,0.06);
+  line-height: 1;
+  transition: all 0.4s ease;
+}
+.jc-label {
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  text-align: right;
+}
+
+/* Step dots bottom right */
+#journeyDots {
+  position: absolute; bottom: 28px; right: 80px;
+  z-index: 10; display: flex; gap: 8px;
+}
+.jd-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: all 0.3s; cursor: pointer;
+}
+.jd-dot.active {
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(212,160,23,0.6);
+  transform: scale(1.3);
+}
+
+/* Controls */
+#journeyControls {
+  position: absolute; bottom: 20px; left: 80px;
+  z-index: 10; display: flex; gap: 10px; align-items: center;
+}
+.jc-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.25s; font-size: 14px;
+}
+.jc-btn:hover { background: var(--gold); border-color: var(--gold); color: #1a1a1a; }
+.jc-play-pause { width: 48px; height: 48px; font-size: 16px; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#hero">
+    <div class="nav-chevrons">
+      <svg width="22" height="22" viewBox="0 0 22 22">
+        <polyline points="2,18 8,8 14,18" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="6,18 12,8 18,18" fill="none" stroke="#95D5B2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="10,18 16,8 22,18" fill="none" stroke="#52B788" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="2" y1="19.5" x2="22" y2="19.5" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="brand-text">Bridge<em>Path</em> Vietnam</div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#daknong">The Region</a></li>
+    <li><a href="#program">Program</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#journey">The Process</a></li>
+    <li><a href="#budget">Budget</a></li>
+    <li><a href="#cta" class="nav-pill">Get Involved</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag au d1">Đắk Nông Province · 2025–2028</div>
+      <h1 class="au d2">Rural Learning<br>Hubs for <em>Digital</em><br>& Literacy Equity</h1>
+      <p class="hero-desc au d3">BridgePath Vietnam builds renovated learning spaces, digital access, structured tutoring, and bicycle transport programs inside rural schools — reaching children who have been left behind.</p>
+      <div class="hero-btns au d4">
+        <a href="#program" class="btn-gold">See What We Do</a>
+        <a href="#impact" class="btn-outline">View Impact →</a>
+      </div>
+    </div>
+    <div class="hero-stats au d3">
+      <div class="hero-stat-box">
+        <div class="hsb-num">$1<span>.3M</span></div>
+        <div class="hsb-label">Total Budget</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">1,000<span>+</span></div>
+        <div class="hsb-label">Children Served</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">800</div>
+        <div class="hsb-label">Bicycles Distributed</div>
+      </div>
+      <div class="hero-stat-box">
+        <div class="hsb-num">4</div>
+        <div class="hsb-label">Learning Hubs</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="prob-photo-strip">
+    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=85&fit=crop&crop=center" alt="Rural Vietnam mountain landscape" loading="lazy">
+    <div class="prob-photo-overlay"></div>
+  </div>
+  <div class="prob-content">
+    <div class="sec-eyebrow">The Problem</div>
+    <h2>Three barriers blocking<br>rural education in <em>Vietnam</em></h2>
+    <p class="sec-lead">Despite Vietnam's national progress, students in remote mountainous provinces face structural disadvantages that national statistics hide.</p>
+    <div class="problem-cards">
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&fit=crop&crop=center" alt="Mountain roads Vietnam" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">5–15<small style="font-size:28px">km</small></div>
+          <div class="prob-stat-sub">Daily walk for some students</div>
+          <div class="prob-card-title">Geographic Barriers</div>
+          <p class="prob-card-text">Children in Đắk Nông & Lào Cai travel mountain roads daily — especially dangerous in the rainy season. Transport difficulty is a top-3 reason for dropout among rural students.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&fit=crop&crop=center" alt="Empty classroom books" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">60<small style="font-size:28px">%+</small></div>
+          <div class="prob-stat-sub">Mountain CLCs lack books & power</div>
+          <div class="prob-card-title">Resource Deficits</div>
+          <p class="prob-card-text">Vietnam's Community Learning Centres are mandated by law, but over 60% in mountainous provinces lack materials, electricity, or active management. They exist on paper — not in practice.</p>
+        </div>
+      </div>
+      <div class="prob-card">
+        <div class="prob-card-photo">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80&fit=crop&crop=center" alt="Digital divide technology" loading="lazy">
+        </div>
+        <div class="prob-card-body">
+          <div class="prob-stat-big">1 in 3</div>
+          <div class="prob-stat-sub">Rural schools lack stable internet</div>
+          <div class="prob-card-title">Digital Divide</div>
+          <p class="prob-card-text">Vietnam's digital education push has accelerated access in cities. Rural Central Highlands and Northern Uplands remain severely underserved — students are cut off from online learning entirely.</p>
+        </div>
+      </div>
+    </div>
+    <div class="src-note">Sources: UNICEF Vietnam (2021), MOET CLC Review (2020), GSMA Mobile Connectivity Index (2023)</div>
+  </div>
+</section>
+
+
+<!-- DAK NONG REGION -->
+<section id="daknong">
+  <div class="dn-photo" style="background-image:url('https://images.unsplash.com/photo-1695094412603-3340f1e72232?w=2400&q=95&fit=crop&crop=center')"></div>
+  <div class="dn-overlay"></div>
+  <div class="dn-overlay-bottom"></div>
+  <canvas id="daknongCanvas"></canvas>
+
+  <div class="dn-content">
+    <div class="dn-eyebrow">Central Highlands · Vietnam</div>
+    <h2 class="dn-title">Đắk Nông.<br><em>Where we begin.</em></h2>
+
+
+  </div>
+
+
+</section>
+
+<script>
+// ── DAK NONG PARTICLES ──
+(function() {
+  const canvas = document.getElementById('daknongCanvas');
+  const ctx = canvas.getContext('2d');
+  let active = false;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class DnParticle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + Math.random() * 80;
+      this.size = Math.random() * 2 + 0.4;
+      this.vy = -(Math.random() * 0.5 + 0.15);
+      this.vx = (Math.random() - 0.5) * 0.25;
+      this.life = 0;
+      this.maxLife = Math.random() * 180 + 80;
+      this.isGold = Math.random() > 0.55;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy; this.life++;
+      if (this.y < -10 || this.life > this.maxLife) this.reset();
+    }
+    draw() {
+      const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * 0.6;
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.shadowBlur = 10;
+      if (this.isGold) {
+        ctx.fillStyle = 'rgba(212,160,23,0.9)';
+        ctx.shadowColor = 'rgba(212,160,23,0.8)';
+      } else {
+        ctx.fillStyle = 'rgba(82,183,136,0.9)';
+        ctx.shadowColor = 'rgba(82,183,136,0.8)';
+      }
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  const particles = [];
+  for (let i = 0; i < 60; i++) {
+    const p = new DnParticle();
+    p.y = Math.random() * canvas.height;
+    particles.push(p);
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (active) particles.forEach(p => { p.update(); p.draw(); });
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  // Intersection observer
+  const section = document.getElementById('daknong');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      active = e.isIntersecting;
+      if (e.isIntersecting) {
+        section.classList.add('dn-visible', 'dn-loaded');
+      }
+    });
+  }, { threshold: 0.2 });
+  obs.observe(section);
+})();
+</script>
+
+<!-- PHOTO BREAK 1 -->
+<div class="photo-break">
+  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1800&q=85&fit=crop&crop=center" alt="Children learning" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-quote">
+      "For many of these students, a learning hub will be their <em>first</em> experience with a computer, strong internet, and a trained adult helping them use it."
+    </div>
+  </div>
+</div>
+
+<!-- PROGRAM -->
+<section id="program">
+  <div class="prog-photo-bg"></div>
+  <div class="prog-inner dark-sec">
+    <div class="sec-eyebrow">What We Do</div>
+    <h2>Four components.<br>One <em>integrated</em> solution.</h2>
+    <p class="sec-lead">We upgrade existing school buildings — connecting physical infrastructure, digital access, structured learning, and transport into one program at four schools in Đắk Nông Province.</p>
+    <div class="program-grid">
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--sage)"></div>
+        <div class="prog-num-bg">01</div>
+        <div class="prog-icon" style="background:rgba(82,183,136,0.15)">🏫</div>
+        <div class="prog-card-title">Renovated Learning Hubs</div>
+        <p class="prog-card-text">We upgrade existing rooms inside four schools into fully equipped library-digital centers — open during school hours and after school for community use.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">4 Schools</span>
+          <span class="prog-chip">25–30 Computers Each</span>
+          <span class="prog-chip">Books & Shelving</span>
+          <span class="prog-chip">After-School Access</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--gold)"></div>
+        <div class="prog-num-bg">02</div>
+        <div class="prog-icon" style="background:rgba(212,160,23,0.15)">📶</div>
+        <div class="prog-card-title">Digital Access & Pocket Wi-Fi</div>
+        <p class="prog-card-text">Every hub gets fixed broadband or 4G LTE internet with offline backup. Pocket Wi-Fi units distributed directly to students. Tech tutorials provided for first-time users.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">Fixed + 4G/LTE</span>
+          <span class="prog-chip">Offline Backup</span>
+          <span class="prog-chip">Pocket Wi-Fi</span>
+          <span class="prog-chip">Tech Tutorials</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--mint)"></div>
+        <div class="prog-num-bg">03</div>
+        <div class="prog-icon" style="background:rgba(149,213,178,0.15)">📖</div>
+        <div class="prog-card-title">Literacy & Online Tutoring</div>
+        <p class="prog-card-text">Room to Read runs structured reading programs at each hub. Students access live and recorded tutoring in Vietnamese, Math, and English — available 24/7 around family schedules.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">Room to Read</span>
+          <span class="prog-chip">Live & Async</span>
+          <span class="prog-chip">24/7 Access</span>
+          <span class="prog-chip">3 Subjects</span>
+        </div>
+      </div>
+      <div class="prog-card">
+        <div class="prog-card-accent" style="background:var(--sage)"></div>
+        <div class="prog-num-bg">04</div>
+        <div class="prog-icon" style="background:rgba(82,183,136,0.15)">🚲</div>
+        <div class="prog-card-title">Bicycle Program</div>
+        <p class="prog-card-text">800 bikes, helmets, and locks distributed across all four schools over three years. A community mechanic network handles ongoing maintenance — keeping students moving and in school.</p>
+        <div class="prog-chips">
+          <span class="prog-chip">800 Bicycles</span>
+          <span class="prog-chip">Helmets & Locks</span>
+          <span class="prog-chip">Community Mechanics</span>
+          <span class="prog-chip">~$250 Per Student</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="sec-eyebrow">Impact</div>
+  <h2>What $1.3M actually <em>delivers</em></h2>
+  <p class="sec-lead">Concrete outcomes over three years — and a model that continues after BridgePath moves to Phase 2.</p>
+  <div class="impact-layout">
+    <div class="impact-photo-col">
+      <div class="impact-main-photo">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&fit=crop&crop=center" alt="Students learning with computers" loading="lazy">
+      </div>
+      <div class="impact-mini-photos">
+        <div class="impact-mini-photo">
+          <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=400&q=80&fit=crop&crop=center" alt="Children bicycle" loading="lazy">
+        </div>
+        <div class="impact-mini-photo">
+          <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?w=400&q=80&fit=crop&crop=center" alt="Students in classroom" loading="lazy">
+        </div>
+      </div>
+    </div>
+    <div class="impact-right">
+      <div class="impact-stats-grid">
+        <div class="impact-stat a"><div class="is-num">4</div><div class="is-lbl">Learning Hubs</div></div>
+        <div class="impact-stat b"><div class="is-num">1,000+</div><div class="is-lbl">Children Served</div></div>
+        <div class="impact-stat c"><div class="is-num">600+</div><div class="is-lbl">Digital Learners</div></div>
+        <div class="impact-stat d"><div class="is-num">800</div><div class="is-lbl">Bicycles</div></div>
+      </div>
+      <ul class="outcomes-list">
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--forest)"></div><div><strong>4 hubs</strong> fully operational inside schools by end of Year 3</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--mid)"></div><div><strong>800 bicycles</strong> in students' hands — measurable improvement in attendance rates</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--sage)"></div><div><strong>24/7 tutoring</strong> access in Math, Vietnamese & English for all enrolled students</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--gold)"></div><div><strong>Sunflower Mission</strong> takes over hub maintenance after Year 3 — infrastructure continues independently</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--forest)"></div><div><strong>Room to Read</strong> continues literacy programs at all four schools after BridgePath moves to Phase 2</div></li>
+        <li class="outcome-li"><div class="outcome-dot" style="background:var(--mid)"></div><div><strong>Replication manual</strong> published Year 3 — ready for Lào Cai and every province that follows</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK 2 -->
+<div class="photo-break">
+  <img src="https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1800&q=85&fit=crop&crop=center" alt="Vietnam landscape infrastructure" loading="lazy">
+  <div class="photo-break-overlay">
+    <div class="photo-break-quote">
+      "We build it, hand it off to partners built to <em>sustain</em> it, then move to the next province."
+    </div>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-photo-bg"></div>
+  <div class="partners-inner dark-sec">
+    <div class="sec-eyebrow">Partnerships</div>
+    <h2>BridgePath leads.<br>Specialists <em>deliver</em>.</h2>
+    <p class="sec-lead">Four expert partners — each contributing what decades of experience only they can bring. One contract. One point of accountability.</p>
+    <div class="partners-grid-cards">
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--sage)"></div>
+        <div class="partner-name">Sunflower Mission</div>
+        <p class="partner-text">Decades of school renovation experience in rural Vietnam. Deep community trust. Works alongside us during the program, then takes over as long-term caretaker of all four school hubs after Year 3.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Infrastructure</span>
+          <span class="partner-chip">Renovation</span>
+          <span class="partner-chip">Long-Term Steward</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--gold)"></div>
+        <div class="partner-name">Room to Read</div>
+        <p class="partner-text">The leading school library and literacy organization across Asia — their model is adopted nationally by Vietnam's Ministry of Education. Trains facilitators, runs reading programs, continues independently after Year 3.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Literacy</span>
+          <span class="partner-chip">Library Design</span>
+          <span class="partner-chip">Facilitator Training</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--mint)"></div>
+        <div class="partner-name">Vietnam DOET</div>
+        <p class="partner-text">Vietnam's Department of Education and Training. Selects the four schools, provides official approvals, connects hubs to national education frameworks, and shares attendance data for monitoring.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">Government Partner</span>
+          <span class="partner-chip">Site Selection</span>
+          <span class="partner-chip">Policy Integration</span>
+        </div>
+      </div>
+      <div class="partner-card">
+        <div class="pc-top-bar" style="background:var(--sage)"></div>
+        <div class="partner-name">Online Tutoring Partners</div>
+        <p class="partner-text">Contracted edtech providers delivering 24/7 curriculum-aligned tutoring in Vietnamese, Math, and English — live sessions and recorded lessons accessible from every hub device.</p>
+        <div class="partner-chips">
+          <span class="partner-chip">24/7 Content</span>
+          <span class="partner-chip">3 Subjects</span>
+          <span class="partner-chip">Live + Async</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="tl-photo-bg"></div>
+  <div class="tl-inner dark-sec">
+    <div class="sec-eyebrow">Timeline</div>
+    <h2>Three years.<br>Three <em>deliberate</em> phases.</h2>
+    <p class="sec-lead">Build first. Operate at full capacity. Hand over and scale. Every milestone is sequenced intentionally.</p>
+    <div class="timeline-cols">
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#1B4332,#2D6A4F)">
+          <div class="tl-yr-label">Year 1</div>
+          <div class="tl-months">Months 1–12</div>
+          <div class="tl-phase">Foundation</div>
+          <div class="tl-big-num">1</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>Hire core team & field coordinators</li>
+            <li>Needs assessment at all four schools</li>
+            <li>Begin renovations on first two hubs</li>
+            <li>Distribute first 200 bicycles</li>
+            <li>Sign all partner agreements</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#2D6A4F,#52B788)">
+          <div class="tl-yr-label">Year 2</div>
+          <div class="tl-months">Months 13–24</div>
+          <div class="tl-phase">Full Operation</div>
+          <div class="tl-big-num">2</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>All 4 hubs completed with 25–30 computers</li>
+            <li>Literacy programs & tutoring live everywhere</li>
+            <li>300 more bicycles distributed (500 total)</li>
+            <li>Midline review at Month 18</li>
+            <li>Replication documentation begins</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-col">
+        <div class="tl-col-head" style="background:linear-gradient(135deg,#52B788,#95D5B2)">
+          <div class="tl-yr-label">Year 3</div>
+          <div class="tl-months">Months 25–36</div>
+          <div class="tl-phase">Handover & Scale</div>
+          <div class="tl-big-num">3</div>
+        </div>
+        <div class="tl-col-body">
+          <ul class="tl-ms">
+            <li>Final 300 bicycles distributed (800 total)</li>
+            <li>External evaluation & endline assessment</li>
+            <li>Replication manual published</li>
+            <li>Hubs handed to Sunflower & schools</li>
+            <li>Lào Cai Phase 2 planning begins</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <div class="sec-eyebrow">Budget</div>
+  <h2>USD 1,300,000<br>over <em>three years</em></h2>
+  <p class="sec-lead">Allocated intentionally — prioritizing people first, then the infrastructure they need to succeed.</p>
+  <div class="budget-layout">
+    <div>
+      <div class="budget-photo">
+        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=80&fit=crop&crop=center" alt="Education investment" loading="lazy">
+      </div>
+      <div class="budget-total-block">
+        <div class="btb-label">Total 3-Year Budget</div>
+        <div class="btb-amount">$1,300,000</div>
+        <div class="btb-note">The largest share goes to staff and training — because a renovated room with computers doesn't educate anyone. The people running these hubs every day make the difference.</div>
+      </div>
+    </div>
+    <div class="budget-bars">
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--forest)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Staff & Training</div>
+          <div class="bar-amount">$380,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:31.7%;background:var(--forest)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--forest)">31.7%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--mid)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Renovation & Hubs</div>
+          <div class="bar-amount">$330,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:27.5%;background:var(--mid)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--mid)">27.5%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--sage)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Digital & Devices</div>
+          <div class="bar-amount">$270,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:20.8%;background:var(--sage)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--sage)">20.8%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:var(--gold)"></div>
+        <div class="bar-info">
+          <div class="bar-name">Bicycles & Transport</div>
+          <div class="bar-amount">$200,000 · ~$250 per student</div>
+          <div class="bar-track"><div class="bar-fill" style="width:15.4%;background:var(--gold)"></div></div>
+        </div>
+        <div class="bar-pct" style="color:var(--dkgold)">15.4%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-swatch" style="background:#bbb"></div>
+        <div class="bar-info">
+          <div class="bar-name">M&E & Admin</div>
+          <div class="bar-amount">$120,000</div>
+          <div class="bar-track"><div class="bar-fill" style="width:9.2%;background:#bbb"></div></div>
+        </div>
+        <div class="bar-pct" style="color:#bbb">9.2%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-photo"></div>
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <div class="sec-eyebrow" style="justify-content:center">Get Involved</div>
+    <h2 style="color:white">Ready to bring quality education<br>to rural <em>Vietnam</em>?</h2>
+    <p>BridgePath Vietnam is seeking implementation partners, co-funders, and organizations interested in replicating this model. Four schools. Four communities. 800 bicycles. 1,000 children.</p>
+    <a href="mailto:hello@bridgepathvietnam.org" class="btn-gold" style="font-size:15px;padding:16px 44px">Contact BridgePath Vietnam</a>
+    <div class="cta-partners">
+      <span>In partnership with</span>
+      <span class="cta-chip">Sunflower Mission</span>
+      <span class="cta-chip">Room to Read</span>
+      <span class="cta-chip">Vietnam DOET</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- CINEMATIC JOURNEY -->
+<section id="journey">
+  <div class="journey-header">
+    <div class="sec-eyebrow" style="justify-content:center">The Process</div>
+    <h2>How We <em>Build</em> a Learning Hub</h2>
+    <p>A continuous look at what it takes to bring a BridgePath Learning Hub from an idea to a room full of students.</p>
+  </div>
+
+  <div id="journeyStage">
+    <canvas id="journeyBgCanvas"></canvas>
+    <div id="journeyProgressBar"></div>
+
+    <div id="journeyOverlay">
+      <div class="jo-step-tag" id="joTag">Step 01 of 07</div>
+      <div class="jo-title" id="joTitle">Finding the<br>Right <em>Schools</em></div>
+      <p class="jo-desc" id="joDesc">Working with Vietnam's Department of Education, we identify four schools across four communities in Đắk Nông Province — where students face the longest distances and fewest resources.</p>
+      <div class="jo-fact-tag" id="joFact"><div class="jo-fact-dot"></div><span id="joFactText">4 schools · 4 communities · Đắk Nông Province</span></div>
+    </div>
+
+    <div id="journeyCounter">
+      <div class="jc-num" id="jcNum">01</div>
+      <div class="jc-label">of 07</div>
+    </div>
+
+    <div id="journeyDots"></div>
+
+    <div id="journeyControls">
+      <button class="jc-btn" id="jcPrev">←</button>
+      <button class="jc-btn jc-play-pause" id="jcPlayPause">⏸</button>
+      <button class="jc-btn" id="jcNext">→</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const STEPS = [
+    {
+      tag: 'Step 01 of 07',
+      title: 'Finding the<br>Right <em>Schools</em>',
+      desc: 'Working with Vietnam\'s Department of Education, we identify four schools across four communities in Đắk Nông — where students face the longest distances and fewest resources.',
+      fact: '4 schools · 4 communities · Đắk Nông Province',
+      bgColor: '#071A0E',
+      accentColor: '#1B4332',
+      scene: 'map'
+    },
+    {
+      tag: 'Step 02 of 07',
+      title: 'Renovation<br><em>Begins</em>',
+      desc: 'Existing school buildings are upgraded — electrical systems rewired, lighting installed, floors repaired, and secure storage built. We renovate, not build from scratch.',
+      fact: 'Renovation keeps costs down and community ownership high',
+      bgColor: '#0D1A0A',
+      accentColor: '#2D4A1E',
+      scene: 'construction'
+    },
+    {
+      tag: 'Step 03 of 07',
+      title: 'Books, Shelves<br>& <em>Space</em>',
+      desc: 'Each hub is stocked with hundreds of books, reading corners, and study tables — designed with Room to Read\'s child-friendly library principles.',
+      fact: 'Room to Read advises on every hub\'s library design',
+      bgColor: '#0A140A',
+      accentColor: '#2D6A4F',
+      scene: 'library'
+    },
+    {
+      tag: 'Step 04 of 07',
+      title: '25–30 Computers<br>& <em>Strong Internet</em>',
+      desc: 'Every hub is equipped with 25 to 30 laptops, fixed broadband or 4G LTE internet, offline backup content, and pocket Wi-Fi units distributed to students.',
+      fact: 'Offline content means learning never stops',
+      bgColor: '#080E14',
+      accentColor: '#1A3A5C',
+      scene: 'digital'
+    },
+    {
+      tag: 'Step 05 of 07',
+      title: 'Facilitators<br><em>Trained</em>',
+      desc: 'Between 15 and 20 facilitators — staff from within the schools — are trained by Room to Read in library management, digital tools, and structured tutoring coordination.',
+      fact: 'Local staff means the program outlasts the project',
+      bgColor: '#0A0E0A',
+      accentColor: '#3B6B3B',
+      scene: 'training'
+    },
+    {
+      tag: 'Step 06 of 07',
+      title: '800 Bicycles<br><em>Distributed</em>',
+      desc: 'Across all four schools over three years, 800 bicycles with helmets and locks are handed to students with the longest commutes. A community mechanic network keeps every bike running.',
+      fact: '~$250 per student · Community mechanic network',
+      bgColor: '#0D0E08',
+      accentColor: '#4A5010',
+      scene: 'bikes'
+    },
+    {
+      tag: 'Step 07 of 07',
+      title: 'Doors <em>Open</em>.<br>Phase 2 Begins.',
+      desc: 'All four hubs are operational. Sunflower Mission takes over the buildings. Room to Read continues the programs. BridgePath Vietnam moves to Lào Cai — and does it all over again.',
+      fact: '1,000+ children served · Lào Cai next',
+      bgColor: '#060E07',
+      accentColor: '#1B4332',
+      scene: 'open'
+    }
+  ];
+
+  const canvas = document.getElementById('journeyBgCanvas');
+  const ctx = canvas.getContext('2d');
+  const stage = document.getElementById('journeyStage');
+
+  let W, H;
+  function resize() {
+    W = stage.offsetWidth;
+    H = stage.offsetHeight;
+    canvas.width = W;
+    canvas.height = H;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  // ── PARTICLE SYSTEM ──
+  class P {
+    constructor(type) { this.type = type; this.reset(); }
+    reset() {
+      this.x = Math.random() * W;
+      this.y = H + Math.random() * 60;
+      this.r = Math.random() * 2 + 0.3;
+      this.vy = -(Math.random() * 0.55 + 0.15);
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.life = 0;
+      this.maxLife = Math.random() * 200 + 100;
+      this.alpha = Math.random() * 0.55 + 0.1;
+    }
+    update() {
+      this.x += this.vx; this.y += this.vy; this.life++;
+      if (this.y < -10 || this.life > this.maxLife) this.reset();
+    }
+    draw(accent) {
+      const a = Math.sin((this.life / this.maxLife) * Math.PI) * this.alpha;
+      ctx.save();
+      ctx.globalAlpha = a;
+      ctx.shadowBlur = 8;
+      if (this.type === 'gold') {
+        ctx.fillStyle = 'rgba(212,160,23,0.9)';
+        ctx.shadowColor = 'rgba(212,160,23,0.7)';
+      } else {
+        ctx.fillStyle = accent + 'CC';
+        ctx.shadowColor = accent + '88';
+      }
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  const particles = [];
+  for (let i = 0; i < 90; i++) {
+    const p = new P(Math.random() > 0.55 ? 'gold' : 'accent');
+    p.y = Math.random() * H;
+    particles.push(p);
+  }
+
+  // ── SCENE DRAWING FUNCTIONS ──
+  function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+    return {r, g, b};
+  }
+
+  function drawScene(scene, accent, progress) {
+    const col = hexToRgb(accent);
+    const aStr = `rgba(${col.r},${col.g},${col.b}`;
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Background gradient
+    const bg = ctx.createLinearGradient(0, 0, W, H);
+    bg.addColorStop(0, STEPS[currentStep].bgColor);
+    bg.addColorStop(1, '#020806');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Subtle grid
+    ctx.strokeStyle = aStr + ',0.04)';
+    ctx.lineWidth = 0.5;
+    const grid = 80;
+    for (let x = 0; x < W; x += grid) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+    }
+    for (let y = 0; y < H; y += grid) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+    }
+
+    if (scene === 'map') drawMapScene(aStr, progress);
+    else if (scene === 'construction') drawConstructionScene(aStr, progress);
+    else if (scene === 'library') drawLibraryScene(aStr, progress);
+    else if (scene === 'digital') drawDigitalScene(aStr, progress);
+    else if (scene === 'training') drawTrainingScene(aStr, progress);
+    else if (scene === 'bikes') drawBikeScene(aStr, progress);
+    else if (scene === 'open') drawOpenScene(aStr, progress);
+
+    // Bottom overlay for text readability
+    const overlay = ctx.createLinearGradient(0, H * 0.3, 0, H);
+    overlay.addColorStop(0, 'rgba(2,8,6,0)');
+    overlay.addColorStop(1, 'rgba(2,8,6,0.95)');
+    ctx.fillStyle = overlay;
+    ctx.fillRect(0, 0, W, H);
+
+    // Left overlay
+    const leftOvl = ctx.createLinearGradient(0, 0, W * 0.55, 0);
+    leftOvl.addColorStop(0, 'rgba(2,8,6,0.7)');
+    leftOvl.addColorStop(1, 'rgba(2,8,6,0)');
+    ctx.fillStyle = leftOvl;
+    ctx.fillRect(0, 0, W, H);
+  }
+
+  function drawMapScene(aStr, p) {
+    // Animated dots appearing on a map-like grid
+    const dots = [
+      {x: 0.38, y: 0.35}, {x: 0.52, y: 0.42}, {x: 0.44, y: 0.55}, {x: 0.61, y: 0.38}
+    ];
+    dots.forEach((d, i) => {
+      const appear = Math.max(0, Math.min(1, (p - i * 0.15) * 4));
+      if (appear <= 0) return;
+      const cx = d.x * W, cy = d.y * H;
+      // Ripple
+      ctx.beginPath();
+      ctx.arc(cx, cy, 30 * appear, 0, Math.PI * 2);
+      ctx.strokeStyle = aStr + `,${0.15 * appear})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      // Second ripple
+      ctx.beginPath();
+      ctx.arc(cx, cy, 18 * appear, 0, Math.PI * 2);
+      ctx.strokeStyle = aStr + `,${0.25 * appear})`;
+      ctx.stroke();
+      // Core dot
+      ctx.beginPath();
+      ctx.arc(cx, cy, 5, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212,160,23,${appear})`;
+      ctx.shadowBlur = 12; ctx.shadowColor = 'rgba(212,160,23,0.8)';
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      // Connecting lines
+      if (i > 0 && appear > 0.5) {
+        const prev = dots[i - 1];
+        ctx.beginPath();
+        ctx.moveTo(prev.x * W, prev.y * H);
+        ctx.lineTo(cx, cy);
+        ctx.strokeStyle = `rgba(212,160,23,${0.3 * (appear - 0.5) * 2})`;
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 8]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+    });
+  }
+
+  function drawConstructionScene(aStr, p) {
+    // Animated building rising from bottom
+    const bx = W * 0.5, by = H * 0.7;
+    const bw = W * 0.35, bh = H * 0.45 * Math.min(1, p * 1.8);
+    // Building outline
+    ctx.strokeStyle = aStr + ',0.4)';
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(bx - bw/2, by - bh, bw, bh);
+    // Windows grid
+    const cols = 5, rows = 4;
+    const ww = bw / (cols + 1), wh = bh / (rows + 1);
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        const wx = bx - bw/2 + ww * (c + 0.5);
+        const wy = by - bh + wh * (r + 0.6);
+        const lit = (p * 20 > r * cols + c);
+        ctx.fillStyle = lit ? `rgba(212,160,23,0.6)` : aStr + ',0.1)';
+        ctx.fillRect(wx - ww * 0.3, wy - wh * 0.3, ww * 0.6, wh * 0.6);
+      }
+    }
+    // Crane arm
+    const craneProgress = Math.min(1, p * 2);
+    ctx.beginPath();
+    ctx.moveTo(bx + bw/2, by - bh);
+    ctx.lineTo(bx + bw/2 + 60 * craneProgress, by - bh - 40 * craneProgress);
+    ctx.strokeStyle = aStr + ',0.5)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    // Construction particles rising
+    for (let i = 0; i < 8; i++) {
+      const t = (p * 3 + i * 0.4) % 1;
+      const px = bx - bw/2 + Math.sin(i * 1.3) * bw * 0.4 + bw/2;
+      const py = by - t * bh * 1.2;
+      ctx.beginPath();
+      ctx.arc(px, py, 2, 0, Math.PI * 2);
+      ctx.fillStyle = aStr + `,${0.4 * (1 - t)})`;
+      ctx.fill();
+    }
+  }
+
+  function drawLibraryScene(aStr, p) {
+    // Bookshelves appearing
+    const shelves = 4;
+    const sw = W * 0.4, sh = 12;
+    const startX = W * 0.38;
+    for (let i = 0; i < shelves; i++) {
+      const appear = Math.max(0, Math.min(1, (p - i * 0.18) * 5));
+      if (appear <= 0) continue;
+      const sy = H * 0.25 + i * (H * 0.12);
+      // Shelf board
+      ctx.fillStyle = aStr + `,${0.35 * appear})`;
+      ctx.fillRect(startX, sy, sw * appear, sh);
+      // Books on shelf
+      const bookCount = 8;
+      const bw2 = (sw * appear) / bookCount;
+      for (let b = 0; b < bookCount; b++) {
+        const bookAppear = Math.max(0, Math.min(1, (appear - b/bookCount) * bookCount));
+        if (bookAppear <= 0) continue;
+        const bx = startX + b * bw2;
+        const bh2 = (H * 0.06 + Math.sin(b * 1.7) * H * 0.02) * bookAppear;
+        const colors = [
+          `rgba(212,160,23,`, aStr + `,`,
+          `rgba(82,183,136,`, `rgba(149,213,178,`
+        ];
+        const c = colors[b % colors.length];
+        ctx.fillStyle = c + `${0.5 * bookAppear})`;
+        ctx.fillRect(bx + 1, sy - bh2, bw2 - 2, bh2);
+      }
+    }
+  }
+
+  function drawDigitalScene(aStr, p) {
+    // Network nodes pulsing and connecting
+    const nodes = [
+      {x: 0.5, y: 0.35}, {x: 0.38, y: 0.5}, {x: 0.62, y: 0.5},
+      {x: 0.43, y: 0.63}, {x: 0.57, y: 0.63}, {x: 0.5, y: 0.72}
+    ];
+    // Draw connections
+    nodes.forEach((n, i) => {
+      if (i === 0) return;
+      const appear = Math.min(1, (p - (i-1)*0.12) * 5);
+      if (appear <= 0) return;
+      const parent = i <= 2 ? 0 : (i <= 4 ? i - 2 : i - 2);
+      const px = nodes[parent].x * W, py = nodes[parent].y * H;
+      const nx = n.x * W, ny = n.y * H;
+      ctx.beginPath();
+      ctx.moveTo(px, py); ctx.lineTo(nx, ny);
+      ctx.strokeStyle = aStr + `,${0.3 * appear})`;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 6]);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    });
+    // Draw nodes
+    nodes.forEach((n, i) => {
+      const appear = Math.min(1, (p - i * 0.12) * 5);
+      if (appear <= 0) return;
+      const nx = n.x * W, ny = n.y * H;
+      const pulse = Math.sin(Date.now() * 0.003 + i) * 0.3 + 0.7;
+      // Outer ring
+      ctx.beginPath();
+      ctx.arc(nx, ny, 16 * pulse * appear, 0, Math.PI * 2);
+      ctx.strokeStyle = i === 0 ? `rgba(212,160,23,${0.3 * appear * pulse})` : aStr + `,${0.2 * appear * pulse})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      // Core
+      ctx.beginPath();
+      ctx.arc(nx, ny, 6, 0, Math.PI * 2);
+      ctx.fillStyle = i === 0 ? `rgba(212,160,23,${appear})` : aStr + `,${0.7 * appear})`;
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = i === 0 ? 'rgba(212,160,23,0.6)' : aStr + ',0.5)';
+      ctx.fill();
+      ctx.shadowBlur = 0;
+    });
+    // Data packets moving
+    for (let i = 0; i < 6; i++) {
+      const t = (p * 2 + i * 0.2) % 1;
+      const startNode = nodes[0];
+      const endNode = nodes[1 + (i % 5)];
+      const px = (startNode.x + (endNode.x - startNode.x) * t) * W;
+      const py = (startNode.y + (endNode.y - startNode.y) * t) * H;
+      ctx.beginPath();
+      ctx.arc(px, py, 3, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212,160,23,${0.6 * (1 - t)})`;
+      ctx.fill();
+    }
+  }
+
+  function drawTrainingScene(aStr, p) {
+    // People silhouettes forming
+    const people = [
+      {x: 0.35, y: 0.6}, {x: 0.45, y: 0.6}, {x: 0.55, y: 0.6},
+      {x: 0.65, y: 0.6}, {x: 0.75, y: 0.6}
+    ];
+    // A "screen" at the front
+    const screenAppear = Math.min(1, p * 3);
+    ctx.strokeStyle = aStr + `,${0.4 * screenAppear})`;
+    ctx.lineWidth = 1.5;
+    ctx.strokeRect(W * 0.42, H * 0.2, W * 0.18, H * 0.18 * screenAppear);
+    if (screenAppear > 0.3) {
+      // Lines on screen = text
+      for (let l = 0; l < 4; l++) {
+        const lAppear = Math.min(1, (screenAppear - 0.3) * 3 - l * 0.2);
+        if (lAppear <= 0) continue;
+        ctx.fillStyle = aStr + `,${0.5 * lAppear})`;
+        ctx.fillRect(W * 0.44, H * 0.24 + l * H * 0.035, W * (0.08 + Math.random() * 0.04) * lAppear, H * 0.008);
+      }
+    }
+    // People
+    people.forEach((person, i) => {
+      const appear = Math.max(0, Math.min(1, (p - i * 0.15) * 4));
+      if (appear <= 0) return;
+      const px = person.x * W, py = person.y * H;
+      // Head
+      ctx.beginPath();
+      ctx.arc(px, py - H * 0.09, H * 0.03, 0, Math.PI * 2);
+      ctx.fillStyle = aStr + `,${0.5 * appear})`;
+      ctx.fill();
+      // Body
+      ctx.beginPath();
+      ctx.moveTo(px, py - H * 0.06);
+      ctx.lineTo(px, py);
+      ctx.strokeStyle = aStr + `,${0.5 * appear})`;
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      // Arms
+      ctx.beginPath();
+      ctx.moveTo(px - H * 0.04, py - H * 0.04);
+      ctx.lineTo(px + H * 0.04, py - H * 0.04);
+      ctx.stroke();
+      // Legs
+      ctx.beginPath();
+      ctx.moveTo(px, py);
+      ctx.lineTo(px - H * 0.025, py + H * 0.07);
+      ctx.moveTo(px, py);
+      ctx.lineTo(px + H * 0.025, py + H * 0.07);
+      ctx.stroke();
+    });
+  }
+
+  function drawBikeScene(aStr, p) {
+    // Animated bicycle shapes moving across screen
+    const numBikes = 5;
+    for (let i = 0; i < numBikes; i++) {
+      const t = (p * 0.8 + i / numBikes) % 1;
+      const bx = t * (W * 1.2) - W * 0.1;
+      const by = H * (0.3 + i * 0.08);
+      const appear = Math.min(1, Math.min(t * 10, (1 - t) * 10));
+      if (appear <= 0) continue;
+      drawBike(bx, by, appear, aStr, i);
+    }
+    // Road lines
+    ctx.strokeStyle = aStr + ',0.12)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([20, 20]);
+    ctx.beginPath();
+    ctx.moveTo(0, H * 0.7);
+    ctx.lineTo(W, H * 0.7);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  function drawBike(x, y, alpha, aStr, idx) {
+    const scale = 22;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.globalAlpha = alpha;
+    ctx.strokeStyle = idx % 2 === 0 ? `rgba(212,160,23,0.8)` : aStr + ',0.7)';
+    ctx.lineWidth = 1.5;
+    ctx.lineCap = 'round';
+    // Wheels
+    ctx.beginPath(); ctx.arc(-scale, 0, scale * 0.7, 0, Math.PI * 2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(scale, 0, scale * 0.7, 0, Math.PI * 2); ctx.stroke();
+    // Frame
+    ctx.beginPath();
+    ctx.moveTo(-scale, 0);
+    ctx.lineTo(0, -scale * 0.9);
+    ctx.lineTo(scale, 0);
+    ctx.moveTo(0, -scale * 0.9);
+    ctx.lineTo(0, 0);
+    ctx.moveTo(-scale * 0.4, -scale * 0.45);
+    ctx.lineTo(-scale, 0);
+    ctx.stroke();
+    // Handlebars
+    ctx.beginPath();
+    ctx.moveTo(-scale * 0.1, -scale * 1.1);
+    ctx.lineTo(scale * 0.25, -scale * 1.0);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawOpenScene(aStr, p) {
+    // Radiating light beams from center — representing opening
+    const cx = W * 0.5, cy = H * 0.35;
+    const beams = 16;
+    for (let i = 0; i < beams; i++) {
+      const angle = (i / beams) * Math.PI * 2;
+      const len = (W * 0.4) * Math.min(1, p * 2);
+      const appear = Math.min(1, p * 2);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + Math.cos(angle) * len, cy + Math.sin(angle) * len);
+      const col = i % 3 === 0 ? `rgba(212,160,23,` : aStr + `,`;
+      ctx.strokeStyle = col + `${0.08 * appear})`;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+    // Central glow
+    const grd = ctx.createRadialGradient(cx, cy, 0, cx, cy, 120 * Math.min(1, p * 2));
+    grd.addColorStop(0, `rgba(212,160,23,${0.3 * Math.min(1, p*2)})`);
+    grd.addColorStop(0.4, aStr + `,${0.15 * Math.min(1, p*2)})`);
+    grd.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = grd;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 120, 0, Math.PI * 2);
+    ctx.fill();
+    // Rising particles cluster
+    for (let i = 0; i < 12; i++) {
+      const t = (p * 2 + i * 0.1) % 1;
+      const angle = (i / 12) * Math.PI * 2;
+      const r = 80 * t;
+      const px = cx + Math.cos(angle) * r;
+      const py = cy + Math.sin(angle) * r - t * 80;
+      ctx.beginPath();
+      ctx.arc(px, py, 3 * (1 - t), 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212,160,23,${0.6 * (1 - t)})`;
+      ctx.fill();
+    }
+  }
+
+  // ── STATE MANAGEMENT ──
+  let currentStep = 0;
+  let stepProgress = 0;
+  let isPlaying = true;
+  const STEP_DURATION = 5000;
+  let lastTime = performance.now();
+  let stepStartTime = performance.now();
+
+  const tag = document.getElementById('joTag');
+  const title = document.getElementById('joTitle');
+  const desc = document.getElementById('joDesc');
+  const fact = document.getElementById('joFact');
+  const factText = document.getElementById('joFactText');
+  const progressBar = document.getElementById('journeyProgressBar');
+  const jcNum = document.getElementById('jcNum');
+  const playPause = document.getElementById('jcPlayPause');
+
+  // Build dots
+  const dotsContainer = document.getElementById('journeyDots');
+  STEPS.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'jd-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goToStep(i);
+    dotsContainer.appendChild(d);
+  });
+
+  function showStep(idx, instant) {
+    const s = STEPS[idx];
+    const elements = [tag, title, desc, fact];
+    elements.forEach(el => {
+      el.classList.remove('show');
+    });
+    tag.textContent = s.tag;
+    title.innerHTML = s.title;
+    desc.textContent = s.desc;
+    factText.textContent = s.fact;
+    jcNum.textContent = String(idx + 1).padStart(2, '0');
+    document.querySelectorAll('.jd-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+    if (!instant) {
+      setTimeout(() => tag.classList.add('show'), 50);
+      setTimeout(() => title.classList.add('show'), 150);
+      setTimeout(() => desc.classList.add('show'), 300);
+      setTimeout(() => fact.classList.add('show'), 500);
+    } else {
+      elements.forEach(el => el.classList.add('show'));
+    }
+  }
+
+  function goToStep(idx) {
+    currentStep = (idx + STEPS.length) % STEPS.length;
+    stepProgress = 0;
+    stepStartTime = performance.now();
+    showStep(currentStep, false);
+  }
+
+  document.getElementById('jcPrev').onclick = () => { goToStep(currentStep - 1); };
+  document.getElementById('jcNext').onclick = () => { goToStep(currentStep + 1); };
+  playPause.onclick = () => {
+    isPlaying = !isPlaying;
+    playPause.textContent = isPlaying ? '⏸' : '▶';
+    if (isPlaying) stepStartTime = performance.now() - stepProgress * STEP_DURATION;
+  };
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    const rect = stage.getBoundingClientRect();
+    if (rect.top > window.innerHeight || rect.bottom < 0) return;
+    if (e.key === 'ArrowRight') goToStep(currentStep + 1);
+    if (e.key === 'ArrowLeft')  goToStep(currentStep - 1);
+    if (e.key === ' ') { e.preventDefault(); playPause.click(); }
+  });
+
+  // Init
+  showStep(0, true);
+
+  // ── ANIMATION LOOP ──
+  function loop(now) {
+    const dt = now - lastTime;
+    lastTime = now;
+
+    if (isPlaying) {
+      stepProgress = Math.min(1, (now - stepStartTime) / STEP_DURATION);
+      if (stepProgress >= 1) {
+        goToStep((currentStep + 1) % STEPS.length);
+      }
+    }
+
+    // Update progress bar
+    const totalProgress = ((currentStep + stepProgress) / STEPS.length) * 100;
+    progressBar.style.width = totalProgress + '%';
+
+    // Draw scene
+    const s = STEPS[currentStep];
+    drawScene(s.scene, s.accentColor, stepProgress);
+
+    // Particles
+    particles.forEach(p => { p.update(); p.draw(s.accentColor); });
+
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Bridge<em>Path</em> Vietnam</div>
+  <div class="footer-note">Rural Learning Hubs for Digital & Literacy Equity · Đắk Nông Province · 2025–2028</div>
+  <div class="footer-note">© 2026 BridgePath Vietnam</div>
+</footer>
+
+
+
+
+</body>
+</html>
